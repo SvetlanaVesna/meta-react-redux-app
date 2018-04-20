@@ -6,7 +6,7 @@ npm install
 npm run watch:portal
 ```
 
-Затем заходим в корневой проект и в нем выполняем
+Затем заходим в корневой проект(portal) и в нем выполняем
 ```
 npm install
 npm run watch
