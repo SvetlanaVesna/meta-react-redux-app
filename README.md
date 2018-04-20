@@ -12,7 +12,7 @@ npm install
 npm run watch
 ```
 
-И теперь идем в браузер и идем по адресу http://localhost:9000
+И теперь идем в браузер по адресу http://localhost:9000
 
 Каждый подпроект собирается maven в jar
 
