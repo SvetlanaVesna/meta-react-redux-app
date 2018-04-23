@@ -7,10 +7,10 @@
     <groupId>neoflex.app</groupId>
     <artifactId>ui</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
-
+    <packaging>war</packaging>
 
     <build>
+        <finalName>ui</finalName>
         <resources>
             <resource>
                 <directory>release</directory>
@@ -20,6 +20,13 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <webXml>WEB-INF\web.xml</webXml>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>
@@ -76,9 +83,9 @@
                                     <version>0.0.1-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>release/modules/ui.react.1</outputDirectory>
+                                    <outputDirectory>src/ui.react.1</outputDirectory>
                                     <destFileName>ui.react.1-0.0.1-SNAPSHOT.jar</destFileName>
-                                    <includes>**/*.*</includes>
+                                    <includes>*/*</includes>
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>neoflex.app</groupId>
@@ -86,9 +93,9 @@
                                     <version>0.0.1-SNAPSHOT</version>
                                     <type>jar</type>
                                     <overWrite>false</overWrite>
-                                    <outputDirectory>release/modules/ui.react.2</outputDirectory>
+                                    <outputDirectory>src/ui.react.2</outputDirectory>
                                     <destFileName>ui.react.2-0.0.1-SNAPSHOT.jar</destFileName>
-                                    <includes>**/*.*</includes>
+                                    <includes>*/*</includes>
                                 </artifactItem>
                             </artifactItems>
                             <includes>**/*.java</includes>

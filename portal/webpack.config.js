@@ -36,6 +36,7 @@ module.exports = {
             {from: path.resolve(__dirname, 'src/index.html')},
             {from: path.resolve(__dirname, 'src/style.css')},
             {from: path.resolve(__dirname, 'libs/system.js')},
+            {from: path.resolve(__dirname, 'src/modules')},
         ]),
 		new CleanWebpackPlugin(['release'])
 	],
@@ -53,13 +54,13 @@ module.exports = {
         },
 		// Proxy config for development purposes. In production, you would configure you webserver to do something similar.
         proxy: {
-            "/app1": {
+            "/ui.react.1": {
                 target: "http://localhost:9001",
-                pathRewrite: {"^/app1" : ""}
+                pathRewrite: {"^/ui.react.1" : ""}
             },
-            "/app2": {
+            "/ui.react.2": {
                 target: "http://localhost:9002",
-                pathRewrite: {"^/app2" : ""}
+                pathRewrite: {"^/ui.react.2" : ""}
             }
         }
     }
