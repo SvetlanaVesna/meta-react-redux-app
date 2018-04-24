@@ -1,7 +1,23 @@
 import React from 'react';
 import {Provider, connect} from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+
 import Counter from './counter';
 import reactLogo from '../assets/react-logo.png'
+
+const rootRoute = {
+    childRoutes: [ {
+        path: 'react',
+        component: require('./components/App'),
+        childRoutes: [
+            require('./routes/Calendar'),
+            require('./routes/Course'),
+            require('./routes/Grades'),
+            require('./routes/Messages'),
+            require('./routes/Profile')
+        ]
+    } ]
+};
 
 
 export default class Root extends React.Component {
@@ -31,6 +47,10 @@ export default class Root extends React.Component {
                         <img src={reactLogo} style={{width: 100}}/> <br />
                         This was rendered by App1, which is written in React.
                         <Counter globalEventDistributor={this.state.globalEventDistributor}/>
+                        <Router
+                            history={browserHistory}
+                            routes={rootRoute}
+                        />
                     </div>
                 </Provider>
         }
