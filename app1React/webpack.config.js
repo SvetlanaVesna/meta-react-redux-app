@@ -26,7 +26,7 @@ module.exports = {
                     {
                         loader: 'file-loader',
                         options: {
-                            publicPath: '/app1/',
+                            publicPath: '/ui.react.1/',
                         }
                     }
                 ]
